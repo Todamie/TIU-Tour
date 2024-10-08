@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0029cc">
+    <meta name="apple-mobile-web-app-title" content="TIU">
+    <meta name="application-name" content="TIU">
+    <meta name="msapplication-TileColor" content="#0029cc">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>ТИУ-360</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                container: {
+                    center: true,
+                    padding: {
+                        DEFAULT: '1rem',
+                        sm: '2rem',
+                        lg: '4rem',
+                        xl: '5rem',
+                        '2xl': '6rem',
+                    },
+                    screens: {
+                        sm: '1900px',
+                        md: '1900px',
+                        lg: '1900px',
+                        xl: '1900px',
+                        '2xl': '1900px',
+                    },
+                },
+                extend: {},
+            },
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css?v=2.0.0">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.1/dist/cdn.min.js"></script>
+</head>
+<body class="bg-slate-100" x-data="app()">
+
+    <main class="main">
+        <div class="container py-12">
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!--<template x-for="tour in tours" :key="tour">
+                    <a :href="`https://gp360.tyuiu.ru/${tour.link}/`" class="group border-2 border-gray-300 rounded-xl bg-white shadow-md hover:shadow-2xl transition duration-500 cursor-pointer">
+                        <img
+                            :src="tour.image ? `/images/preview/${tour.image}` : '/images/preview/default.webp'"
+                            alt="tour-preview"
+                            class="w-full h-[250px] object-cover object-top border-b border-gray-300"
+                        >
+                        <div class="flex items-center py-4">
+                            <div class="relative flex items-center text-lg px-6 font-extrabold text-gazprom">
+                                <span x-text="tour.num" class="relative group-hover:text-white z-[2]"></span>
+                                <div class="absolute right-0 w-[1px] h-[32px] bg-gazprom flex-none group-hover:w-full transition-[width] z-[1] duration-300"></div>
+                            </div>
+                            <div x-text="tour.title" class="px-6"></div>
+                        </div>
+                    </a>
+                </template>-->
+                <template x-for="tour in tours" :key="tour">
+                     <a :href="tour.target" class="group border-2 border-gray-300 rounded-xl bg-white shadow-md hover:shadow-2xl transition duration-500 cursor-pointer">
+                        <img
+                            :src="tour.image"
+                            alt="tour-preview"
+                            class="w-full h-[300px] object-cover object-top border-b border-gray-300"
+                        >
+                        <div class="flex items-center py-4">
+                            <div class="relative flex items-center text-lg px-6 font-extrabold">
+                                <span x-text="tour.num"></span>
+                                <div class="absolute right-0 w-[1px] h-[32px] flex-none group-hover:w-full transition-[width] z-[1] duration-300"></div>
+                            </div>
+                            <div x-text="tour.title" class="px-6"></div>
+                        </div>
+
+                    </a>
+                </template>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container py-6">
+            <div class="flex flex-wrap justify-between items-center gap-6 text-sm text-gray-400">
+                <span>© 2024, Все права защищены</span>
+                <a href="https://digital.tyuiu.ru" target="_blank" class="w-fit flex items-center gap-1 hover:!text-blue-600 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon-tabler icon-tabler-atom w-4 h-4 flex-none" width="24px" height="24px" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>   <path d="M12 12v.01"></path>   <path d="M19.071 4.929c-1.562 -1.562 -6 .337 -9.9 4.243c-3.905 3.905 -5.804 8.337 -4.242 9.9c1.562 1.561 6 -.338 9.9 -4.244c3.905 -3.905 5.804 -8.337 4.242 -9.9"></path>   <path d="M4.929 4.929c-1.562 1.562 .337 6 4.243 9.9c3.905 3.905 8.337 5.804 9.9 4.242c1.561 -1.562 -.338 -6 -4.244 -9.9c-3.905 -3.905 -8.337 -5.804 -9.9 -4.242"></path></svg>
+                    Разработано Департаментом цифрового развития ТИУ
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="preloader">
+        <div id="loader"></div>
+    </div>
+
+    <script type="text/javascript">
+        function app() {
+            return {
+                filter: 'all',
+                tours: [
+                    {
+                        'link': 'tour-1',
+                        'title': 'Школа инженерного резерва',
+                        'num': '01',
+                        'image': 'img/shir.jpg',
+                        //'vector': 'operator',
+                        'target': 'shir/index.html',
+                        'address': 'Орджоникидзе, 54/улица Республики, 49/3'
+                    },
+                    {
+                        'link': 'tour-2',
+                        'title': 'Исторический корпус ТИУ',
+                        'num': '02',
+                        'image': 'img/arhid.jpg',
+                        //'vector': 'operator',
+                        'target': 'arhid/index.html',
+                        'address': 'Луначарского, 2'
+                    },
+                    {
+                        'link': 'tour-3',
+                        'title': '7 корпус ТИУ',
+                        'num': '03',
+                        'image': 'img/7korpus.jpg',
+                        //'vector': 'operator',
+                        'target': '7korpus/index.html',
+                        'address': 'Мельникайте, 70'
+                    },
+                ]
+            }
+        }
+    </script>
+    
+    <script type="text/javascript">
+        window.onload = function () {
+            window.setTimeout(function () {
+                document.querySelector('.preloader').style.opacity = 0;
+                setTimeout(() => {
+                    document.querySelector('.preloader').style.display = 'none';
+                }, 1000);
+            }, 500);
+        }
+    </script>
+</body>
+</html>
