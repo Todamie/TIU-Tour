@@ -1,0 +1,93 @@
+#expand {
+  width: 120px;
+  height: 80px;
+  margin-left: -35px;
+  margin-top: -70px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  transition: width .3s ease-in-out,
+              height .3s ease-in-out,
+              background-color .3s ease-in-out,
+              color .3s ease-in-out,
+              margin .3s ease-in-out;
+}
+
+#expand::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: calc(100% - 1px);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border: solid transparent;
+  border-color: transparent;
+  border-top-color: #fff;
+  border-width: 10px;
+  transition: border-top-color .3s ease-in-out,
+              border-width .3s ease-in-out,
+              left .3s ease-in-out,
+              top .3s ease-in-out;
+}
+
+#expand .title {
+  width: max-content;
+  margin: 0 auto;
+  line-height: 1;
+  font-size: 14px;
+  max-width: 120px;
+  margin-top: 20px;
+}
+
+#expand .icon,
+#expand p {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#expand .icon {
+  width: 0;
+  height: 0;
+  margin-top: auto;
+  transition: all .3s ease-in-out;
+}
+
+#expand p {
+  width: 90%;
+  margin: auto;
+  font-style: italic;
+  font-size: 12px;
+  margin-top: 10px;
+  transition: opacity .2s ease-in-out;
+}
+
+#expand:hover {
+  width: 210px;
+  height: 210px;
+  margin-top: -200px;
+  margin-left: -100px;
+  background-color: #222;
+  color: #fff;
+  z-index: 2;
+}
+
+#expand:hover .icon {
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+  opacity: 1;
+}
+
+#expand:hover p {
+  opacity: 1;
+  transition: opacity .3s ease-in-out .3s;
+}
+
+#expand:hover::after {
+  border-top-color: transparent;
+  border-width: 0;
+}

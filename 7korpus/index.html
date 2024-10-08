@@ -1,0 +1,358 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#0029cc">
+    <meta name="apple-mobile-web-app-title" content="7 корпус ТИУ">
+    <meta name="application-name" content="7 корпус ТИУ">
+    <meta name="msapplication-TileColor" content="#0029cc">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>7 корпус-360</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="../vendor/reset.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/expand.css">
+    <link rel="stylesheet" href="../css/textInfo.css">
+    <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="stylesheet" href="../css/rotate.css">
+    <link rel="stylesheet" href="../css/info.css">
+    <link rel="stylesheet" href="../css/tooltip.css">
+    <link rel="stylesheet" href="../css/hint.css">
+    <link rel="stylesheet" href="../css/hintspot.css">
+    <link rel="stylesheet" href="../css/video-js.css">
+
+    <style>
+        @-ms-viewport {
+            width: device-width;
+        }
+
+        * {
+            font-family: "Montserrat", sans-serif !important;
+        }
+    </style>
+
+    <script type="module" src="data.js"></script>
+</head>
+
+
+<body class="multiple-scenes view-control-buttons">
+
+<div id="pano"></div>
+
+<div id="sceneList">
+  <ul class="scenes">
+    
+      <a href="javascript:void(0)" class="scene" data-id="scene-1">
+        <li class="text">Турникеты</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-2">
+        <li class="text">Лифты</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-3">
+        <li class="text">Справа от входа</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-4">
+        <li class="text">Правое крыло 1 этажа</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-5">
+        <li class="text">Кофейня (1 этаж)</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-6">
+        <li class="text">Вход в библиотеку</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-7">
+        <li class="text">Проход к лестницам</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-8">
+        <li class="text">Проход справа от лифта</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-9">
+        <li class="text">Проход за лифтами (справа)</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-10">
+        <li class="text">Туалеты 1 этаж</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-11">
+        <li class="text">Лестница 1 этаж</li> <!--Спуск на 1 этаж-->
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-12">
+        <li class="text">2 этаж. Лестница</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-13">
+        <li class="text">2 этаж. Проход за лифтами (справа)</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-14">
+        <li class="text">2 этаж. Проход к лестницам</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-15">
+        <li class="text">2 этаж. Главный холл. СИБУР</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-16">
+        <li class="text">2 этаж. Левое крыло</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-17">
+        <li class="text">2 этаж. Балкон</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-18">
+        <li class="text">2 этаж. Вход к кабинетам терротделов</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-19">
+        <li class="text">2 этаж. Проход между терротделами</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-20">
+        <li class="text">2 этаж. Проход от терротделов к главному холлу</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-21">
+        <li class="text">2 этаж. История компании СУЭНКО</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-22">
+        <li class="text">2 этаж. Проход справа от лифта</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-23">
+        <li class="text">2 этаж. Правое крыло</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-24">
+        <li class="text">2 этаж. Проход по правому крылу</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-25">
+        <li class="text">3 этаж. Лестница</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-26">
+        <li class="text">3 этаж. Проход за лифтами (справа)</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-27">
+        <li class="text">3 этаж. Главный холл. Лукойл</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-28">
+        <li class="text">3 этаж. Левое крыло</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-29">
+        <li class="text">3 этаж. Правое крыло</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-30">
+        <li class="text">3 этаж. Проход по правому крылу</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-31">
+        <li class="text">5 этаж. Лестница</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-32">
+        <li class="text">5 этаж. Проход за лифтами (справа)</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-33">
+        <li class="text">5 этаж. Главный холл. Роснефть</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-34">
+        <li class="text">5 этаж. Левое крыло</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-35">
+        <li class="text">5 этаж. Проход по левому крылу</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-36">
+        <li class="text">5 этаж. Проход справа от лифта</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-37">
+        <li class="text">5 этаж. Правое крыло</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-38">
+        <li class="text">5 этаж. Стенд Роснефть:"Сделано из нефти"</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-39">
+        <li class="text">5 этаж. Проход по правому крылу</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-40">
+        <li class="text">6 этаж. Лестница</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-41">
+        <li class="text">6 этаж. Проход за лифтами (справа)</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-42">
+        <li class="text">6 этаж. Главный холл. Газпром</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-43">
+        <li class="text">6 этаж. Проход к лестнице</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-44">
+        <li class="text">6 этаж. Проход справа от лифта</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-45">
+        <li class="text">6 этаж. Левое крыло</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-46">
+        <li class="text">6 этаж. Коворкинг-зона</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-47">
+        <li class="text">6 этаж. Правое крыло</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-48">
+        <li class="text">6 этаж. Проход по правому крылу</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-49">
+        <li class="text">7 этаж. Лестница</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-50">
+        <li class="text">7 этаж. Проход за лифтами (справа)</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-51">
+        <li class="text">7 этаж. Главный холл. Транснефть Сибирь</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-52">
+        <li class="text">7 этаж. Дальняя часть главного холла</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-53">
+        <li class="text">7 этаж. Левое крыло</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-54">
+        <li class="text">7 этаж. Проход по правому крылу</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-55">
+        <li class="text">8 этаж. Лестница</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-56">
+        <li class="text">8 этаж. Проход за лифтами (справа)</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-57">
+        <li class="text">8 этаж. Главный холл</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-58">
+        <li class="text">8 этаж. Правое крыло</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="scene-59">
+        <li class="text">8 этаж. Проход по правому крылу</li>
+      </a>
+    
+  </ul>
+</div>
+
+<div id="titleBar">
+  <h1 class="sceneName"></h1>
+</div>
+
+<div class="control-btn" id="toggleDeviceOrientation">
+    <img class="enable" src="../img/enable.png">
+    <img class="disable" src="../img/disable.png">
+</div>
+
+<a href="javascript:void(0)" id="autorotateToggle">
+  <img class="icon off" src="../img/play.png">
+  <img class="icon on" src="../img/pause.png">
+</a>
+
+<a href="javascript:void(0)" id="fullscreenToggle">
+  <img class="icon off" src="../img/fullscreen.png">
+  <img class="icon on" src="../img/windowed.png">
+</a>
+
+<a href="javascript:void(0)" id="sceneListToggle">
+  <img class="icon off" src="../img/expand.png">
+  <img class="icon on" src="../img/collapse.png">
+</a>
+
+<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
+  <img class="icon" src="../img/up.png">
+</a>
+<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
+  <img class="icon" src="../img/down.png">
+</a>
+<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
+  <img class="icon" src="../img/left.png">
+</a>
+<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
+  <img class="icon" src="../img/right.png">
+</a>
+<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
+  <img class="icon" src="../img/plus.png">
+</a>
+<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
+  <img class="icon" src="../img/minus.png">
+</a>
+
+<script src='https://cdn.jsdelivr.net/npm/webxr-polyfill@latest/build/webxr-polyfill.js'></script>
+
+<script src="../vendor/screenfull.min.js" ></script>
+<script src="../vendor/bowser.min.js" ></script>
+<script src="../vendor/marzipano.js" ></script>
+
+<script src="../vendor/webvr-polyfill.js"></script>
+<script src="../vendor/DeviceOrientationControlMethod.js"></script>
+<script src="../vendor/video.min.js"></script>
+
+<script src="../vendor/WebVrView.js"></script>
+
+
+<script defer src="index.js?version=1.0.1"></script>
+
+</body>
+</html>
